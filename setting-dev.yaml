@@ -1,15 +1,15 @@
 # settings-dev.yaml
-name: "go-gin"
+name: "sample-go-service"
 port: 8022
 logsAddress: "./logs/"
 
 mysql:
  name: "root"
- host: "120.XX.XX.XX"
- port: 3306
- password: "XXXXXXXX"
- dbName: "test"
+ host: "47.113.201.193"
+ port: 8210
+ password: "ronin123456"
+ dbName: "sample-go-service"
  
 redis:
- host: "120.XX.XX.XX"
+ host: "47.113.201.193"
  port: 6379

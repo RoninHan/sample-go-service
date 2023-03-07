@@ -1,17 +1,18 @@
 package initialize
 
 import (
+	"sample-go-service/config"
+	"sample-go-service/global"
+
 	"github.com/fatih/color"
 	"github.com/spf13/viper"
-	"go_gin/config"
-	"go_gin/global"
 )
 
 func InitConfig() {
 	// 实例化viper
 	v := viper.New()
 	//文件的路径如何设置
-	v.SetConfigFile("./settings-dev.yaml")
+	v.SetConfigFile("setting-dev.yaml")
 	if err := v.ReadInConfig(); err != nil {
 		panic(err)
 	}
