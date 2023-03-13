@@ -1,6 +1,7 @@
 package dao
 
 import (
+	"fmt"
 	"sample-go-service/global"
 	"sample-go-service/models"
 
@@ -52,4 +53,17 @@ func GetUserListDao(page int, page_size int) (int, []interface{}) {
 		userList = append(userList, userItemMap)
 	}
 	return total, userList
+}
+
+var user models.User
+
+// UsernameFindUserInfo 通过username找到用户信息
+func FindUserInfo(username string, password string) (*models.User, bool) {
+	// 查询用户
+	rows := global.DB.Where(&models.User{NickName: username, Password: password}).Find(&user)
+	fmt.Println(&user)
+	if rows.RowsAffected < 1 {
+		return &user, false
+	}
+	return &user, true
 }

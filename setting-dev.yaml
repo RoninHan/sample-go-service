@@ -13,3 +13,6 @@ mysql:
 redis:
  host: "47.113.201.193"
  port: 6379
+
+jwt:
+  key: "EYsnfKMf5XWk87LASEs28Dj5ZqGkSerH"
